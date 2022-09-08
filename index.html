@@ -12,73 +12,25 @@
     <link rel="stylesheet" href="./src/styles/index.css">
     <link rel="stylesheet" href="./src/styles/header.css">
     <link rel="stylesheet" href="./src/styles/footer.css">
+    <script defer type="module" src="./src/scripts/api.js"></script>
+    <script defer type="module" src="./src/scripts/models/index.js"></script>
 </head>
 <body>
     <header>
-        <h1>Kenzie Empresas</h1>
+        <a href="../../index.html">
+            <h1>Kenzie Empresas</h1>
+        </a>
         <div>
-            <button class="btnHeader">Login</button>
-            <button class="btnHeader">Cadastro</button>
+            <button id="btnLogin" class="btnHeader">Login</button>
+            <button id="btnCadastro" class="btnHeader">Cadastro</button>
         </div>
     </header>
     <main>
+        <select name="" id="setoresNoAuth">
+            <option value="semSetor">Todos setores</option>
+        </select>
         <ul class="containerEmpresas">
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
-            <li>
-                <div>
-                    <h4>Eita bichola</h4>
-                    <span>25:00</span>
-                </div>
-                <p>Sex shop</p>
-                <p>Encontre o que quiser aqui, desde encanamento até fones de ouvido</p>
-            </li>
+
         </ul>
     </main>
     <footer>

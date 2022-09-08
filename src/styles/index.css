@@ -13,10 +13,25 @@ main{
     display: flex;
     flex-direction: column;
     padding: 3px;
-    width: 20%;
+    width: 24.1%;
     margin: 5px;
 }
 .containerEmpresas li > div{
     display: flex;
     justify-content: space-between;
 }
+select{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: 14px;
+    border: 1px solid var(--grey1);
+    background-color: var(--grey3);
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    padding: 3px;
+    background: url(../../src/assets/setas-para-baixo.png) no-repeat center right var(--grey3);
+    background-size: 10px;
+    margin-bottom: 10px;
+}   
