@@ -6,6 +6,7 @@
     outline: none;
     box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
 }
 
 :root{
@@ -20,4 +21,7 @@
 
 body{
     font-family: "Roboto Condensed", sans-serif;
+}
+a:visited{
+    color: var(--bg-color);
 }
