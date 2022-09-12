@@ -1,6 +1,20 @@
 button{
     padding: 5px;
 }
+.btnGeral{
+    padding: 3px;
+    background-color: var(--mainColor);
+    border-radius: 2px;
+    color: var(--bg-color);
+    width: 100%;
+}
+.btnDeletar{
+    padding: 3px;
+    background-color: red;
+    border-radius: 2px;
+    color: var(--bg-color);
+    width: 100%;
+}
 .btnIrCadastro{
     background-color: transparent;
     border-radius: 3px;

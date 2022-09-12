@@ -26,5 +26,3 @@ setoresNoAuth.addEventListener("change", (event) => {
         }
     }
 })
-
-setInterval(Api.verificarLogin('./src/pages/empresas'), 500)
