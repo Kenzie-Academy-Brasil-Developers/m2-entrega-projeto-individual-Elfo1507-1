@@ -1,0 +1,25 @@
+.containerEmpresas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.containerEmpresas li{
+    border: 1px solid var(--grey1);
+    box-shadow: 0.1px 0.1px 4px grey;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    width: 24.1%;
+    margin: 5px;
+}
+.containerEmpresas li > div{
+    display: flex;
+    justify-content: space-between;
+}
+.containerDeps > li {
+    width: 20%;
+    border: 1px solid var(--grey1);
+    box-shadow: 0.1px 0.1px 4px grey;
+    margin: 5px;
+    height: fit-content;
+}

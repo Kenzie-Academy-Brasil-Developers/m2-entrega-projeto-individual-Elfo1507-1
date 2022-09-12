@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/forms.css">
     <link rel="stylesheet" href="../styles/buttons.css">
-    <link rel="stylesheet" href="../styles/empresasADM.css">
+    <link rel="stylesheet" href="../styles/landingPageADM.css">
     <script defer type="module" src="../scripts/api.js"></script>
-    <script defer type="module" src="../scripts/models/empresasADM.js"></script>
+    <script defer type="module" src="../scripts/models/landingPageADM.js"></script>
 </head>
 <body>
     <header>
@@ -31,18 +31,28 @@
         </div>
     </header>
     <main>
-        <section>
-            <h2>Cadastrar Empresa</h2>
-            <form>
-                <input type="text" name="" id="nomeEmpresa" placeholder="Insira o nome da empresa">
-                <input type="time" name="" id="horaDeAbrirEmpresa" placeholder="Insira a hora de abertura">
-                <input type="text" name="" id="descEmpresa" placeholder="Insira a descrição">
-                <select name="" id="selectSetores">
+        <h1>Bem vindo, adm</h1>
+        <h3>Usuarios:</h3>
+        <ul id="containerUsuarios">
+            <!-- <li>
+                <div>
+                    <h4>Bingus</h4>
+                    <span>Funcionario</span>
+                </div>
+                <p>bingus@bingus.com</p>
+                <div>
+                    <p>Hibrido</p>
+                    <p>Junior</p>
+                </div>
+                <div class="btnContainer">
+                    <button class="btnGeral">Modificar?</button>
+                </div>
+            </li> -->
+        </ul>
+        <h3>Usuarios sem departamento:</h3>
+        <ul id="containerUsuariosNoDep">
 
-                </select>
-                <button id="btnCadastroEmpresa">Cadastrar</button>
-            </form>
-        </section>
+        </ul>
     </main>
     <footer>
         <p>Kenzie Empresas | Todos os direitos reservados</p>

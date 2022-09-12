@@ -26,4 +26,5 @@ btnLogar.addEventListener("click", (event) => {
     Api.login(body)
 })
 
-setInterval(Api.verificarLogin('./empresas'), 500)
+
+Api.verificarLogin()
