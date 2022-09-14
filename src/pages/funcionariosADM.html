@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/forms.css">
     <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/empresasADM.css">
+    <link rel="stylesheet" href="../styles/funcionariosADM.css">
     <script defer type="module" src="../scripts/api.js"></script>
-    <script defer type="module" src="../scripts/models/empresas.js"></script>
+    <script defer type="module" src="../scripts/models/funcionariosADM.js"></script>
 </head>
 <body>
     <header>
@@ -23,13 +25,30 @@
             <h1>Kenzie Empresas</h1>
         </a>
         <div>
-            <button class="btnHeader">Empresas</button>
-            <button class="btnHeader">Funcionarios</button>
+            <button class="btnHeader" id="btnLandingPage">Pagina Inicial</button>
+            <button class="btnHeader" id="btnEmpresas">Empresas</button>
+            <button class="btnHeader" id="btnFuncionarios">Funcionarios</button>
             <button id="btnSair" class="btnHeader">Sair</button>
         </div>
     </header>
     <main>
-        <h1>Bem vindo, membro comum</h1>
+        <section>
+            <h2>Contratar fucionario</h2>
+            <select name="" id="deps">
+
+            </select>
+            <select name="" id="funcs">
+
+            </select>
+            <button class="btnGeral" id="btnContratar">Contratar</button>
+        </section>
+        <section>
+            <h2>Demitir funcionario</h2>
+            <select name="" id="funcs2">
+
+            </select>
+            <button class="btnGeral" id="btnDemitir">Demitir</button>
+        </section>
     </main>
     <footer class="footer1">
         <p>Kenzie Empresas | Todos os direitos reservados</p>

@@ -1,0 +1,31 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+main > h1{
+    margin-bottom: 15px;
+}
+main > ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+li{
+    border: 1px solid var(--grey2);
+    width: 19%;
+    padding: 5px;
+    box-shadow: 0.1px 0.1px 4px grey;
+    margin-right: 12px;
+    margin-bottom: 5px;
+
+}
+li > div{
+    display: flex;
+    justify-content: space-between;
+}
+li > .btnContainer{
+    display: flex;
+    justify-content: flex-end;
+}

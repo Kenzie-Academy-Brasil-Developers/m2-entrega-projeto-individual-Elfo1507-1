@@ -1,0 +1,30 @@
+header{
+    background-color: var(--mainColor);
+    color: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+header div{
+    display: flex;
+}
+.btnHeader{
+    background-color: var(--mainColor);
+    padding: 5px;
+    border-radius: 2px;
+    margin: 5px;
+}
+.btnHeader:hover{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+main{
+    padding: 10px;
+    margin-top: 65px;
+}

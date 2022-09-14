@@ -1,0 +1,16 @@
+.footer1{
+    position: absolute;
+    bottom: 0;
+}
+.footer2{
+    position: static;
+}
+.footer1, .footer2{
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

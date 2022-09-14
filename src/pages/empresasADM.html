@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/forms.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/empresasADM.css">
+    <link rel="stylesheet" href="../styles/cards.css">
+    <script defer type="module" src="../scripts/api.js"></script>
+    <script defer type="module" src="../scripts/models/empresasADM.js"></script>
+</head>
+<body>
+    <header>
+        <a href="../../index.html">
+            <h1>Kenzie Empresas</h1>
+        </a>
+        <div>
+            <button class="btnHeader" id="btnLandingPage">Pagina Inicial</button>
+            <button class="btnHeader" id="btnEmpresas">Empresas</button>
+            <button class="btnHeader" id="btnFuncionarios">Funcionarios</button>
+            <button id="btnSair" class="btnHeader">Sair</button>
+        </div>
+    </header>
+    <main>
+        <section class="sectionEmpresasCadastro">
+            <section>
+                <h2>Cadastrar Empresa</h2>
+                <form>
+                    <input type="text" name="" id="nomeEmpresa" placeholder="Insira o nome da empresa">
+                    <label for="horaDeAbrirEmpresa">Insira a hora de abertura</label>
+                    <input type="time" name="" id="horaDeAbrirEmpresa">
+                    <input type="text" name="" id="descEmpresa" placeholder="Insira a descrição">
+                    <select name="" id="selectSetores">
+
+                    </select>
+                    <button id="btnCadastroEmpresa" class="btnGeral">Cadastrar</button>
+                </form>
+            </section>
+            <section class="containerEmpresasSection">
+                <select name="" id="setoresNoAuth">
+                </select>
+                <ul class="containerEmpresas">
+        
+                </ul>
+            </section>
+        </section>
+        <section class="sectionDep">
+            <section class="sectionDepCadastro">
+                <h2>Cadastrar departamento</h2>
+                <form>
+                    <input type="text" name="" id="nomeDep" placeholder="Insira o nome do departamento">
+                    <input type="text" name="" id="descDep" placeholder="Insira a descrição">
+                    <select name="" id="selectEmpresasDep">
+
+                    </select>
+                    <button id="btnCadastroDep" class="btnGeral">Cadastrar</button>
+                </form>
+            </section>
+            <section class="sectionDepListar">
+                <h2>Departamentos</h2>
+                <ul class="containerDeps">
+                    <!-- <li>
+                        <h3>Nome</h3>
+                        <p>descrição</p>
+                        <span>Empresas</span>
+                        <ul>
+                            <li>
+                                <p>Empresa1</p>
+                            </li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </section>
+        </section>
+        <section class="sectionDepEmpresas">
+            <select name="" id="selectEmpresas">
+
+            </select>
+            <ul id="depsPorEmpresa">
+
+            </ul>
+        </section>
+    </main>
+    <footer class="footer2">
+        <p>Kenzie Empresas | Todos os direitos reservados</p>
+    </footer>
+</body>
+</html>

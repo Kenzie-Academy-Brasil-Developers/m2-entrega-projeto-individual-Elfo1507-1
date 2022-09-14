@@ -1,0 +1,17 @@
+.sectionEmpresasCadastro, .sectionDepCadastro, .sectionDep{
+    display: flex;
+}
+.sectionDepCadastro{
+    flex-direction: column;
+    width: 20%;
+}
+.sectionDepListar{
+    width: 80%;
+}
+.containerEmpresasSection{
+    margin-left: 10px;
+}
+ul{
+    height: 40%;
+    display: flex;
+}
