@@ -99,6 +99,7 @@ class Api{
         div.append(h4, span)
         div2.append(p2, p3)
         li.append(div, p1, div2, btn)
+        li.classList.add('containerFunc')
         container.appendChild(li)
     }
     static gerarEmpresasNoAuth(){
@@ -164,7 +165,7 @@ class Api{
             }
         })
     }
-    static gerarUsuarios(){
+    static gerarUsuarios(container){
         fetch(`${this.baseUrl}users`, {
             method: "GET",
             headers: this.headersAuth
@@ -172,9 +173,9 @@ class Api{
         .then(res => res.json())
         .then(res => {
             console.log(res)
-            let containerUsuarios = document.querySelector('#containerUsuarios');
+
             for(let i = 0; i < res.length; i++){
-                this.gerarCardUsuario(res[i], containerUsuarios)
+                this.gerarCardUsuario(res[i], container)
             }
         })
     }
@@ -350,12 +351,16 @@ class Api{
                 let p1 = document.createElement('p')
                 let span = document.createElement('span')
                 let p2 = document.createElement('p')
-                li.append(h3, p1, span, p2)
+                let btn = document.createElement('button')
+                li.append(h3, p1, span, p2, btn)
                 containerDeps.appendChild(li)
                 h3.innerText = res[i].name
                 p1.innerText = res[i].description
                 span.innerText = 'Empresas:'
                 p2.innerText = res[i].companies.name
+                btn.innerText = 'Modificar?'
+                btn.id = res[i].uuid
+                btn.classList.add('btnGeral')
             }
         })
     }
@@ -395,7 +400,7 @@ class Api{
                 containerDeps.appendChild(li)
                 h3.innerText = res[i].name
                 p1.innerText = res[i].description
-                span.innerText = 'Empresas:'
+                span.innerText = 'Empresa:'
                 p2.innerText = res[i].companies.name
             }
         })
@@ -415,6 +420,205 @@ class Api{
         .then((res) => {
             console.log(res)
         })
+    }
+    static gerarModificadorDep(id){
+        let main = document.querySelector('main');
+        main.innerHTML = '';
+        let input1 = document.createElement('input');
+        let btn = document.createElement('button');
+        let btn2 = document.createElement('button');
+        btn.innerText = 'Modificar'
+        btn.id = id
+        btn.classList.add('btnGeral')
+        btn.classList.add('btnModificar')
+        btn2.innerText = 'Deletar?'
+        btn2.id = id
+        btn2.classList.add('btnDeletar')
+        input1.type = 'text'
+        input1.placeholder = 'Insira descrição'
+        input1.id = 'mudarDescricaoDep'
+        main.append(input1, btn2, btn)
+    }
+    static modificarDep(id){
+        let body = {
+            description: document.querySelector('#mudarDescricaoDep').value
+        }
+        fetch(`${this.baseUrl}departments/${id}`,  {
+            method: 'PATCH',
+            headers: this.headersAuth,
+            body: JSON.stringify(body)
+        })
+        .then((res) => {
+            console.log(res)
+            window.location.reload()
+        })
+    }
+    static deletarDep(id){
+        fetch(`${this.baseUrl}departments/${id}`,  {
+            method: 'DELETE',
+            headers: this.headersAuth
+        })
+    }
+    static gerarSelectFuncs(container){
+        fetch(`${this.baseUrl}admin/out_of_work`, {
+            method: 'GET',
+            headers: this.headersAuth
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            for(let i = 0; i < res.length; i++) {
+                let option = document.createElement('option')
+                option.value = res[i].uuid
+                option.innerText = res[i].username
+                container.append(option)
+            }
+        })
+    }
+    static gerarSelectDeps(container){
+        fetch(`${this.baseUrl}departments`, {
+            method: 'GET',
+            headers: this.headersAuth
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            for(let i = 0; i < res.length; i++) {
+                let option = document.createElement('option')
+                option.value = res[i].uuid
+                option.innerText = res[i].name
+                container.append(option)
+            }
+        })
+    }
+    static contratarFuncionario(idDep, idFunc){
+        let body = {
+            user_uuid: idFunc,
+            department_uuid: idDep,
+        }
+        console.log(body)
+        fetch(`${this.baseUrl}departments/hire/`, {
+            method: 'PATCH',
+            headers: this.headersAuth,
+            body: JSON.stringify(body)
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+        })
+    }
+    static gerarSelectFuncsDep(container){
+        fetch(`${this.baseUrl}users`, {
+            method: 'GET',
+            headers: this.headersAuth
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            for(let i = 0; i < res.length; i++) {
+                if(res[i].is_admin == false){
+                    let option = document.createElement('option')
+                    option.value = res[i].uuid
+                    option.innerText = res[i].username
+                    container.append(option)
+                }
+            }
+        })
+    }
+    static demitirFunc(id){
+        fetch(`${this.baseUrl}departments/dimiss/${id}`, {
+            method: 'PATCH',
+            headers: this.headersAuth
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+        })
+    }
+
+    static gerarInfos(){
+        fetch(`${this.baseUrl}users/profile`, {
+            method: 'GET',
+            headers: this.headersAuth
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res)
+            let container = document.querySelector('#containerEu')
+            let div = document.createElement("div")
+            let div2 = document.createElement("div")
+            let div3 = document.createElement("div")
+            let h4 = document.createElement("h4")
+            let p1 = document.createElement("p")
+            let p2 = document.createElement("p")
+            let p3 = document.createElement("p")
+            let p4 = document.createElement("p")
+            let btn = document.createElement("button")
+            h4.innerText = res.username
+            p1.innerText = res.email
+            p2.innerText = res.kind_of_work
+            p3.innerText = res.professional_level
+            p4.innerText = res.email
+            div3.classList.add('btnContainer')
+            btn.innerText = 'Modificar?'
+            btn.classList.add('btnGeral')
+            btn.setAttribute('id', 'btnModificar')
+            div.append(h4, p4)
+            div2.append(p2, p3)
+            container.append(div, div2, div3, btn)
+        })  
+    }
+    static gerarColegas(){
+        fetch(`${this.baseUrl}users/departments/coworkers`, {
+            method: 'GET',
+            headers: this.headersAuth
+        })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res[0].users)
+            let container = document.querySelector('#containerColegas')
+            for (let i = 0; i < res[0].users.length; i++) {
+                let li = document.createElement("li")
+                let div = document.createElement("div")
+                let div2 = document.createElement("div")
+                let div3 = document.createElement("div")
+                let h4 = document.createElement("h4")
+                let p1 = document.createElement("p")
+                let p2 = document.createElement("p")
+                let p3 = document.createElement("p")
+                let p4 = document.createElement("p")
+                h4.innerText = res[0].users[i].username
+                p1.innerText = res[0].users[i].email
+                p2.innerText = res[0].users[i].kind_of_work
+                p3.innerText = res[0].users[i].professional_level
+                p4.innerText = res[0].users[i].email
+                div3.classList.add('btnContainer')
+                li.classList.add('containerFunc')
+                div.append(h4, p4)
+                div2.append(p2, p3)
+                li.append(div, div2, div3)
+                container.append(li)
+            }
+        })
+    }
+    static gerarModificadorEu(){
+        let main = document.querySelector('main')
+        let section = document.createElement("section")
+        let input1 = document.createElement('input')
+        let input2 = document.createElement('input')
+        let input3 = document.createElement('input')
+        let btn = document.createElement('button')
+        input1.type = 'text'
+        input1.placeholder = 'Insira seu nome'
+        input1.id = 'novoNome'
+        input2.type = 'email'
+        input2.placeholder = 'Insira seu email'
+        input2.id = 'novoEmail'
+        input3.type = 'password'
+        input3.placeholder = 'Insira sua senha'
+        input3.id = 'novaSenha'
+        btn.innerText = 'Mudar'
+        btn.id = 'btnMudar'
+        section.append(input1, input2, input3, btn)
+        main.appendChild(section)
     }
 }
 export {Api}

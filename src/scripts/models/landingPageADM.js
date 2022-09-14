@@ -5,7 +5,7 @@ const containerTd = document.querySelector('main')
 const btnEmpresas = document.querySelector('#btnEmpresas')
 const btnFuncionarios = document.querySelector('#btnFuncionarios')
 const btnLanding = document.querySelector('#btnLandingPage')
-
+const containerUsuarios = document.querySelector('#containerUsuarios')
 
 btnSair.addEventListener('click', (event) => {
     event.preventDefault();
@@ -56,7 +56,7 @@ containerTd.addEventListener('click', (event) => {
 })
 
 
-Api.gerarUsuarios()
+Api.gerarUsuarios(containerUsuarios)
 Api.gerarUsuariosSemDep()
 
 btnEmpresas.addEventListener("click", (event) => {

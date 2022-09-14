@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="../styles/forms.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/empresasADM.css">
+    <link rel="stylesheet" href="../styles/funcionariosADM.css">
     <script defer type="module" src="../scripts/api.js"></script>
-    <script defer type="module" src="../scripts/models/empresasADM.js"></script>
+    <script defer type="module" src="../scripts/models/funcionariosADM.js"></script>
 </head>
 <body>
     <header>
@@ -32,19 +33,24 @@
     </header>
     <main>
         <section>
-            <h2>Cadastrar Empresa</h2>
-            <form>
-                <input type="text" name="" id="nomeEmpresa" placeholder="Insira o nome da empresa">
-                <input type="time" name="" id="horaDeAbrirEmpresa" placeholder="Insira a hora de abertura">
-                <input type="text" name="" id="descEmpresa" placeholder="Insira a descrição">
-                <select name="" id="selectSetores">
+            <h2>Contratar fucionario</h2>
+            <select name="" id="deps">
 
-                </select>
-                <button id="btnCadastroEmpresa">Cadastrar</button>
-            </form>
+            </select>
+            <select name="" id="funcs">
+
+            </select>
+            <button class="btnGeral" id="btnContratar">Contratar</button>
+        </section>
+        <section>
+            <h2>Demitir funcionario</h2>
+            <select name="" id="funcs2">
+
+            </select>
+            <button class="btnGeral" id="btnDemitir">Demitir</button>
         </section>
     </main>
-    <footer>
+    <footer class="footer1">
         <p>Kenzie Empresas | Todos os direitos reservados</p>
     </footer>
 </body>

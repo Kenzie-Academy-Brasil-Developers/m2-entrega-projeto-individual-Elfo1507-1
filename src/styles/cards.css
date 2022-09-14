@@ -22,4 +22,16 @@
     box-shadow: 0.1px 0.1px 4px grey;
     margin: 5px;
     height: fit-content;
+    padding: 3px;
+}
+.containerFunc{
+    border: 1px solid var(--grey1);
+    box-shadow: 0.1px 0.1px 4px grey;
+    display: flex;
+    flex-direction: column;
+    padding: 3px;
+    margin: 5px;
+}
+ul{
+    display: flex;
 }
