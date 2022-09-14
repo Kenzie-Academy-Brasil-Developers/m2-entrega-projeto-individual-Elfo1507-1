@@ -7,7 +7,8 @@ const btnLanding = document.querySelector('#btnLandingPage')
 const btnCadastrar = document.querySelector('#btnCadastroEmpresa')
 const btnCadastrarDep = document.querySelector('#btnCadastroDep')
 
-Api.gerarSelectSetores()
+
+Api.gerarSelectSetores(document.querySelector('#selectSetores'))
 
 let idDep
 let setores = document.querySelector("#selectSetores")
@@ -78,3 +79,22 @@ selectEmpresas.addEventListener("change", (event) => {
         Api.gerarDepsPorEmpresa(event.target.value)
     }
 })
+
+let containerGeral = document.querySelector('.containerDeps')
+containerGeral.addEventListener('click', (event) =>{
+    event.preventDefault()
+    if(event.target.nodeName == 'BUTTON'){
+        Api.gerarModificadorDep(event.target.id)
+        const btnMudar = document.querySelector('.btnModificar')
+        const btnDeletar = document.querySelector('.btnDeletar')
+        btnMudar.addEventListener('click', (event) => {
+            event.preventDefault()
+            Api.modificarDep(event.target.id)
+        })
+        btnDeletar.addEventListener('click', (event) => {
+            event.preventDefault()
+            Api.deletarDep(event.target.id)
+        })
+    }
+})
+

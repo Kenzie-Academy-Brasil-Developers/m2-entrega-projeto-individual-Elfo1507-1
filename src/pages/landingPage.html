@@ -9,13 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/loginCadastro.css">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/forms.css">
     <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/landingPage.css">
+    <link rel="stylesheet" href="../styles/cards.css">
     <script defer type="module" src="../scripts/api.js"></script>
-    <script defer type="module" src="../scripts/models/empresas.js"></script>
+    <script defer type="module" src="../scripts/models/landingPage.js"></script>
 </head>
 <body>
     <header>
@@ -23,13 +23,24 @@
             <h1>Kenzie Empresas</h1>
         </a>
         <div>
-            <button class="btnHeader">Empresas</button>
-            <button class="btnHeader">Funcionarios</button>
             <button id="btnSair" class="btnHeader">Sair</button>
         </div>
     </header>
     <main>
-        <h1>Bem vindo, membro comum</h1>
+        <section class="containerUsuarios">
+            <div>
+                <h2>Você</h2>
+                <div id="containerEu" class="containerFunc">
+
+                </div>
+            </div>
+            <div>
+                <h2>Colegas</h2>
+                <ul id="containerColegas">
+
+                </ul>
+            </div>
+        </section>
     </main>
     <footer class="footer1">
         <p>Kenzie Empresas | Todos os direitos reservados</p>
